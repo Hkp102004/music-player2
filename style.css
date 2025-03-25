@@ -1,0 +1,259 @@
+body{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    font-family: "Grechen Fuemen", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.music-player{
+    width: 400px;
+    height: 260px;
+    background: linear-gradient(pink, white);
+    margin-top: 205px;
+    box-shadow: 0 30px 100px pink;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.glow{
+    position: absolute;
+    color: pink;
+    top: 10px;
+    text-shadow: 0 0 20px white;
+}
+
+.music-name{
+    text-align: center;
+    font-size: 22px;
+    color: white;
+}
+
+.disk{
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(rgb(211, 211, 211), black);
+    position: relative;
+    margin-left: 150px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px pink;
+    animation: rotate 5s linear infinite;
+    animation-play-state: paused;
+}
+
+.disk.play{
+    animation-play-state: running;
+}
+
+.disk::before{
+    content: '';
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: pink;
+    border: 1px solid white;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotate(0);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.song-slider{
+    position: relative;
+    width: 100%;
+}
+
+.seek-bar{
+    -webkit-appearance: none;
+    width: 380px;
+    margin-left: 10px;
+    height: 5px;
+    cursor: pointer;
+    background: pink;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.seek-bar::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    width: 1px;
+    height: 20px;
+    box-shadow: -400px 0 0 400px rgb(252, 158, 173);
+}
+
+.current-time, .song-duration{
+    font-size: 12px;
+    color: rgb(255, 129, 150);
+}
+
+.current-time{
+    margin-left: 10px;
+}
+.song-duration{
+    position: absolute;
+    right: 10px;
+}
+
+.controls{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    margin-top: 9px;
+}
+
+.play-btn{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50%;
+    background: pink;
+}
+
+.play-btn span{
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 20px;
+    border-radius: 2px;
+    transition: .5s;
+    background: rgb(246, 122, 142);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+.play-btn span:nth-child(2){
+    left: 55%;
+    transform-origin: center;
+}
+
+.play-btn.pause span:nth-child(2){
+    transform: translateY(-50%) scaleY(0);
+}
+
+.play-btn.pause span:nth-child(1){
+    width: 35%;
+    left: 53%;
+    transform: translate(-50%,-50%);
+    border-radius: 0;
+    clip-path: polygon(0 0, 100% 49%, 100% 49%, 0% 100%);
+}
+
+.play-btn.pause{
+    animation: pulse 2s linear infinite;
+}
+
+@keyframes pulse{
+    0%{
+        box-shadow: 0;
+    }
+    50%{
+        box-shadow: 0 0 0 5px rgba(255, 244, 244, 0.27);
+    }
+    100%{
+        box-shadow: 0 0 0 5px rgba(255, 130, 130, 0.5);
+    }
+}
+
+.btn{
+    width: 32px;
+    height: 32px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    background: pink;
+}
+
+.venti{
+    position: fixed;
+    display: block;
+    height: 100px;
+    width: auto;
+    top: 270px;
+    left: 568px;
+}
+
+.venti2{
+    position: fixed;
+    height: 87px;
+    width: auto;
+    top: 276px;
+    left: 870px;
+}
+
+.beidoe{
+    position: fixed;
+    height: 180px;
+    width: auto;
+    top: 280px;
+    left: 100px;
+    z-index: 10;
+}
+
+.nahida{
+    position: fixed;
+    height: 250px;
+    width: auto;
+    top: 400px;
+    right: 200px;
+    z-index: 10;
+}
+
+.yunjin{
+    position: fixed;
+    height: 200px;
+    width: auto;
+    top: 140px;
+    right: 120px;
+    z-index: 10;
+}
+
+.glow1{
+    position: fixed;
+    right: 180px;
+    width: 100px;
+    height: auto;
+    box-shadow: 0 0px 70px 10px pink;
+}
+
+.glow2{
+    position: fixed;
+    bottom: 150px;
+    right: 300px;
+    box-shadow: 0 0 90px 50px pink;
+}
+.glow3{
+    position: fixed;
+    top: 370px;
+    left: 170px;
+    box-shadow: 0 0 100px 30px pink;
+}
+.glow-another{
+    position: fixed;
+    color: pink;
+    top: 100px;
+    left: 200px;
+    width: 20px;
+    align-content: center;
+    text-shadow: 0 0 60px pink;
+}
+
