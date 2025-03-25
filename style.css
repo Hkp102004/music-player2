@@ -17,7 +17,9 @@ body{
     box-shadow: 0 30px 100px pink;
     border-radius: 10px;
     overflow: hidden;
+    margin_right: 25px
 }
+
 
 .glow{
     position: absolute;
